@@ -110,7 +110,6 @@ __pypackages__/
 
 # Docker
 *.dockerignore
-Dockerfile
 docker-compose.yml
 
 # Google Cloud
