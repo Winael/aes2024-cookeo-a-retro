@@ -10,7 +10,7 @@ env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GAR_REPOSITORY: docker-repo
   GAR_LOCATION: europe-west1
-  GAR_URL: ${{ env.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY }}
+  GAR_URL: europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/${{ env.GAR_REPOSITORY }}
   IMAGE_NAME: "cookeo-a-retro"
   SERVICE_ACCOUNT: ${{ secrets.GCP_SERVICE_ACCOUNT }}
   WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GCP_WORKLOAD_IDENTITY_PROVIDER }}
