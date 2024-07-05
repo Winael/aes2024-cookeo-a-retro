@@ -1,0 +1,134 @@
+/* styles.css */
+
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bruno+Ace&family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
+
+
+body {
+    font-family: 'Bruno Ace', Arial, sans-serif; /* Use Bruno Ace as the primary font */
+    margin: 0;
+    padding: 0;
+    background-color: #f9f9f9;
+}
+
+header {
+    height: 120px;;
+}
+
+header .logo {
+    width: 90px;
+    vertical-align: middle;
+    position: relative;
+    top: 7px;
+    left: 7px;
+}
+
+header h1 {
+    display: inline;
+    margin: 0 20px;
+    font-size: 2em;
+}
+
+main {
+    padding: 20px;
+    background-image: url(../img/robot.png);
+    background-size: 800px;
+    background-repeat: no-repeat;
+    background-position-x: right;
+    padding-bottom: 325px;
+}
+
+main h1 {
+    font-weight: 400;
+    font-family: 'Bruno Ace';
+    font-size: 2em;
+    line-height: 77.19px;
+    letter-spacing: 4px;
+    color: #000000;
+}
+
+
+main h2 {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+    width: 50%;
+}
+
+main p {
+    font-size: 1.2em;
+    margin-bottom: 15px;
+    font-family: 'Open Sans';
+    font-weight: 300;
+    width: 50%;
+}
+
+main .start-button {
+    background-color: #ff0043;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 1.2em;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+main .start-button:hover {
+    background-color: #cc0036;
+}
+
+footer {
+    background-color: #333;
+    color: white;
+    padding: 10px 0;
+    height: 10vh;
+    width: 100%;
+    position: fixed;
+}
+
+footer a {
+    color: #ff0043;
+    text-decoration: none;
+    margin-left: 10px;
+}
+
+.ellipse {
+    width: 104px; /* Double the radius for the width */
+    height: 104px; /* Double the radius for the height */
+    background-color: white;
+    border-radius: 50%; /* Creates the ellipse shape */
+    box-shadow: 0 3px 8px 0 #49454F; /* Shadow: offset-x offset-y blur spread color */
+    position: relative;
+    top: 10px;
+    margin: 0 auto; /* Center horizontally */
+  }
+
+.banner {
+    background-image: linear-gradient(45deg, #EE2238 45%, #BF1D67 100%);
+    height: 60px;
+}
+
+.responsive-title h1 {
+    font-size: 3rem; /* Adjust the font size as needed */
+}
+
+.responsive-title h2 {
+    font-size: 2.5rem; /* Adjust the font size as needed */
+}
+
+@media (max-width: 768px) { /* Adjust the breakpoint as needed */
+    .responsive-title h1 {
+        font-size: 2.5rem; /* Smaller font size for smaller screens */
+    }
+    .responsive-title h2 {
+        font-size: 2rem; /* Smaller font size for smaller screens */
+    }
+}
+
+@media (max-width: 480px) { /* Adjust the breakpoint as needed */
+    .responsive-title h1 {
+        font-size: 2rem; /* Even smaller font size for very small screens */
+    }
+    .responsive-title h2 {
+        font-size: 1.5rem; /* Even smaller font size for very small screens */
+    }
+}
