@@ -35,7 +35,7 @@ jobs:
     
       - name: Configure Docker to use Artifact Registry
         run: | 
-          gcloud auth print-access-token --impersonate-service-account ${{ secrets.GOOGLE_SERVICE_ACCOUNT }} | docker login -u oauth2accesstoken --password-stdin https://${{ secrets.GOOGLE_REPO_DOCKER }}
+          gcloud auth configure-docker ${{ env.GAR_URL }}
 
   build-and-deploy:
     runs-on: ubuntu-latest
@@ -57,7 +57,6 @@ jobs:
 
       - name: Push Docker Image to Artifact Registry
         run: |
-          gcloud info
           docker push "${{ env.GAR_URL }}/${{ env.IMAGE_NAME }}${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}"
 
       - name: Deploy to Cloud Run
