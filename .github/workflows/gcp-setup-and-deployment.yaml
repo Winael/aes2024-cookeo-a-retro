@@ -5,18 +5,13 @@ on:
     branches:
       - main
       - '*'
-
 env:
   PROJECT_ID: ${{ secrets.GCP_PROJECT_ID }}
   GAR_REPOSITORY: docker-repo
   GAR_LOCATION: europe-west1
   GAR_URL: europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-repo
   IMAGE_NAME: "cookeo-a-retro"
-  #SERVICE_ACCOUNT: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
-  #WORKLOAD_IDENTITY_PROVIDER: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
   WIP_POOL: ${{ secrets.GCP_WIP_POOL }}
-
-
 
 jobs:
   gcp-setup:
@@ -36,9 +31,9 @@ jobs:
         uses: google-github-actions/auth@v2
         with:
           token_format: 'access_token'
-          project_id: ${{ env.PROJECT_ID }}
-          workload_identity_provider: ${{ env.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
-          service_account: ${{ env.GOOGLE_SERVICE_ACCOUNT }}
+          project_id: ${{ secrets.PROJECT_ID }}
+          workload_identity_provider: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
+          service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
     
       - name: GAR login
         id: gar-auth
