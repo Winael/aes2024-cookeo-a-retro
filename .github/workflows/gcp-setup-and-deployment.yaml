@@ -54,16 +54,16 @@ jobs:
 
       - name: Build Docker Image
         run: |
-          docker build -t "{{ env.GAR_URL }}/${{ env.IMAGE_NAME }}:${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}" .
+          docker build -t "${{ env.GAR_URL }}/${{ env.IMAGE_NAME }}${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}" .
 
       - name: Push Docker Image to Artifact Registry
         run: |
-          docker push "{{ env.GAR_URL }}/${{ env.IMAGE_NAME }}:${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}"
+          docker push "${{ env.GAR_URL }}/${{ env.IMAGE_NAME }}${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}"
 
       - name: Deploy to Cloud Run
         uses: google-github-actions/deploy-cloudrun@v1
         with:
-          image: "{{ env.GAR_URL }}/${{ env.IMAGE_NAME }}:${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}"
+          image: "${{ env.GAR_URL }}/${{ env.IMAGE_NAME }}${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}"
           tag: latest
           region: europe-west1  # Replace with your desired region
           platform: managed
