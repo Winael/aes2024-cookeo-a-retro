@@ -57,6 +57,8 @@ jobs:
 
       - name: Push Docker Image to Artifact Registry
         run: |
+          gcloud auth list
+          gcloud auth print-access-token | docker login -u oauth2accesstoken --password-stdin https://${{ secrets.GOOGLE_REPO_DOCKER }}
           docker push "${{ env.GAR_URL }}/${{ env.IMAGE_NAME }}${{ github.ref == 'refs/heads/main' && '' || format('-{0}', github.ref_name) }}"
 
       - name: Deploy to Cloud Run
