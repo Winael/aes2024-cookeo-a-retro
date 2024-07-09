@@ -29,13 +29,17 @@ jobs:
       - name: Authenticate to Google Cloud
         uses: google-github-actions/auth@v0.5.0
         with:
+          token_format: access_token
           project_id: ${{ secrets.GCP_PROJECT_ID }}
           workload_identity_provider: ${{ secrets.GOOGLE_WORKLOAD_IDENTITY_PROVIDER }}
           service_account: ${{ secrets.GOOGLE_SERVICE_ACCOUNT }}
     
       - name: Configure Docker to use Artifact Registry
-        run: |
-          gcloud auth configure-docker ${{ secrets.GOOGLE_REPO_DOCKER }}
+        uses: docker/login-action@v3
+        with:
+          registry: ${{ secrets.GOOGLE_REPO_DOCKER }}
+          username: oauth2accesstoken
+          password: ${{ steps.auth.outputs.access_token }}
 
   build-and-deploy:
     runs-on: ubuntu-latest
