@@ -12,6 +12,7 @@ env:
   GAR_URL: europe-west1-docker.pkg.dev/${{ secrets.GCP_PROJECT_ID }}/docker-repo
   IMAGE_NAME: "cookeo-a-retro"
   WIP_POOL: ${{ secrets.GCP_WIP_POOL }}
+  GAR_URL: ${{ secrets.GOOGLE_REPO_DOCKER }}
 
 jobs:
   gcp-setup:
