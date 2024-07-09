@@ -13,7 +13,6 @@ env:
   IMAGE_NAME: "cookeo-a-retro"
   WIP_POOL: ${{ secrets.GCP_WIP_POOL }}
   
-
 jobs:
   gcp-setup:
     runs-on: ubuntu-latest
