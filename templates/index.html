@@ -21,12 +21,18 @@
             <p>Vous cherchez à <strong>optimiser vos projets</strong> et à <strong>renforcer la cohésion de votre équipe</strong> grâce à l'IA ? Je m'appelle ECHO et je suis là pour vous aider.</p>
             <p>Notre application de rétrospective est la solution parfaite !</p>
             <p>Avec notre outil, vous pouvez facilement <strong>analyser les succès</strong>, <strong>identifier les points à améliorer</strong> et <strong>planifier des actions concrètes</strong> pour l'avenir.</p>
-            <button class="start-button">Start</button>
+            <button class="start-button"><img src="{{ url_for('static', filename='img/arrow.png') }}" alt="Arrow" />Commencer</button>
         </main>
     </div>
     <footer>
         <p>Copyright © 2024 Zenika - Tous droits réservés.</p>
         <a href="#">Mentions légales</a>
     </footer>
+
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/8.10.1/firebase-firestore.js"></script>
+    <script src="{{ url_for('static', filename='js/jquery-3.7.1.min.js') }}"></script>
+    <script src="{{ url_for('static', filename='js/script.js') }}"></script>
+    
 </body>
 </html>

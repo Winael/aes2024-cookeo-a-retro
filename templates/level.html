@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Accueil - Rétrospective AI</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="banner">
+                <div class="ellipse">
+                    <img src="{{ url_for('static', filename='img/logo.png') }}" alt="Logo Zenika" class="logo">
+                </div>
+            </div>
+        </header>
+        <main>
+           <button class="home-button" onclick="window.location.href='/';">
+                <img src="{{ url_for('static', filename='img/home.png') }}" alt="Accueil" class="home-icon">
+                <p>Accueil</p>
+            </button>
+           <h2 class="echo-question">Echo : User {{correlation_id }}, Quel est vôtre niveau en agilité ?</h2>
+           <div class="echo-choice-level">
+                <button class="choice-button">
+                    <img src="{{ url_for('static', filename='img/beginer.png') }}" alt="Débutant" class="beginer-icon" />
+                    <h3>Débutant</h3>
+                    <p>Pas très calé en rétro, mais ça m'intéresse.</p>
+                </button>
+                <button class="choice-button">
+                    <img src="{{ url_for('static', filename='img/expert.png') }}" alt="Expert" class="expert-icon" />
+                    <h3>Expert</h3>
+                    <p>La rétrospective, je connais bien mais j’aime toujours en apprendre plus.</p>
+                </button>
+           </div>
+        </main>
+    </div>
+    <footer>
+        <p>Copyright © 2024 Zenika - Tous droits réservés.</p>
+        <a href="#">Mentions légales</a>
+    </footer>
+</body>
+</html>
